@@ -14,6 +14,7 @@ function oddEvenSort(arr) {
 
 function validAnagrams(s, t) {
   // Your code here
+  return s.split('').sort().join('') === t.split('').sort().join('');
 
 }
 

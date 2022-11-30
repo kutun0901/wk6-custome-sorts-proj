@@ -31,7 +31,41 @@ return arr.sort((a, b) => {
 
 function frequencySort(arr) {
   // Your code here
+  const count = {};
+  debugger
+
+  for (let i = 0; i < arr.length; i++) {
+    debugger
+    if (count[arr[i]]) {
+      count[arr[i]]++;
+    } else{
+      count[arr[i]] = 1;
+    }
+  }
+
+  return arr.sort((fi, se) => {
+    debugger
+    if (count[fi] === count[se]) {
+       return se - fi;
+       debugger
+    } else if (count[fi] > count[se]){
+      return 1;
+      debugger
+    } else{
+      return -1;
+    }
+
+  })
+
 }
+
+const arr1 = [1, 1, 2, 2, 2, 3];
+const arr2 = [2, 3, 1, 3, 2];
+const arr3 = [-1, 1, -6, 4, 5, -6, 1, 4, 1]
+
+frequencySort(arr1);        // => [3, 1, 1, 2, 2, 2]
+frequencySort(arr2);        // => [1, 3, 3, 2, 2]
+frequencySort(arr3);        // => [5, -1, 4, 4, -6, -6, 1, 1, 1]
 
 module.exports = [
   oddEvenSort,

@@ -20,6 +20,13 @@ function validAnagrams(s, t) {
 
 function reverseBaseSort(arr) {
   // Your code here
+return arr.sort((a, b) => {
+  let Ba = Math.floor(Math.log10(a));
+  let Bb = Math.floor(Math.log10(b));
+  if (Ba === Bb) return a - b;
+  else return Bb - Ba;
+})
+
 }
 
 function frequencySort(arr) {
